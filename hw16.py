@@ -10,9 +10,7 @@ def have_trains_crashed(v1, v2):
     time2 = v2 / distance2
     if time1 > time2:
         return False
-    if time2 > time1:
-        return True
-    if time1 == time2:
+    if time2 >= time1:
         return True
 
 print('Столкнутся поезда?', have_trains_crashed(4, 6))
