@@ -24,6 +24,7 @@ def circles_intersects(x1, y1, r1, x2, y2, r2):
         if distance > radius_sum or distance < radius_difference:
             answer = False
         return answer
+    
     if r1 == r2:
         radius_sum = r1 + r2
         distance = math.sqrt(math.pow(x2 - x1, 2) + math.pow((y2 - y1), 2))
