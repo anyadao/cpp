@@ -15,5 +15,5 @@ def have_trains_crashed(v1, v2):
     if time1 == time2:
         return True
 
-print('Столкнутся поезда? ', have_trains_crashed(4, 6))
+print('Столкнутся поезда?', have_trains_crashed(4, 6))
 print('Столкнутся поезда?', have_trains_crashed(8, 79))
