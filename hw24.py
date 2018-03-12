@@ -13,7 +13,6 @@ def chess_reward():
         corn = corn*2
         if corn >= 1000000:
             corn = corn - 1
-            print(i+1)
             break
     return i+1, corn
 
