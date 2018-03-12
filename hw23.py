@@ -12,6 +12,6 @@ def guess_game():
             print('Число больше!!!')
         if number > computer_number:
             print('Число меньше!!!')
-    return print('Ура! Вы угадали!')
+    print('Ура! Вы угадали!')
 
 guess_game()
