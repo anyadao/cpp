@@ -12,5 +12,5 @@ def get_max_digit(big_number):
             number = num
     return number
 
-big_number = random.randint(100000000000, 999999999999)
+big_number = random.randint(1e11, 1e12-1)
 print('Самая большая цифра в числе: ', get_max_digit(big_number))
