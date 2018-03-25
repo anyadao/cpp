@@ -12,11 +12,13 @@
 # def encode(str_to_encode): # returns enсoded string
 # 		pass
 import re
+import string
 
 def encode(str_to_encode):
     encrypted = ''
     shift = 5
-    encryption_table = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    #encryption_table = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    encryption_table = str(string.ascii_lowercase + string.digits)
     parts = str_to_encode.split(' ')
     length_of_table = len(encryption_table)
     length_parts = len(parts)
