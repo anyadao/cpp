@@ -11,30 +11,23 @@
 #
 # def encode(str_to_encode): # returns enсoded string
 # 		pass
-import re
 import string
 
 def encode(str_to_encode):
     encrypted = ''
     shift = 5
-    #encryption_table = 'abcdefghijklmnopqrstuvwxyz0123456789'
     encryption_table = str(string.ascii_lowercase + string.digits)
     parts = str_to_encode.split(' ')
     length_of_table = len(encryption_table)
     length_parts = len(parts)
     for word in parts:
         length_word = len(word)
-        for i in range(len(word)):
-            for j in range(length_of_table):
-                if word[i] == encryption_table[j]:
-                    if(j + shift) < length_of_table:
-                        encrypted += encryption_table[j + shift]
-                    else:
-                        difference = (j + shift) - length_of_table
-                        encrypted += encryption_table[difference]
-                        continue
-        if re.search('[.,:!?-]', word):
-            encrypted = encrypted + word[length_word-1]
+        for i in range(length_word):
+            if encryption_table.find(word[i]) != -1:
+                enc_ind = encryption_table.find(word[i])
+                encrypted += encryption_table[(enc_ind + shift) % length_of_table]
+            else:
+                encrypted += word[i]
         if length_parts > 1:
                 encrypted += ' '
                 length_parts -= 1
