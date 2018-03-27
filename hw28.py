@@ -16,7 +16,7 @@ import string
 def encode(str_to_encode):
     encrypted = ''
     shift = 5
-    encryption_table = str(string.ascii_lowercase + string.digits)
+    encryption_table = string.ascii_lowercase + string.digits
     parts = str_to_encode.split(' ')
     length_of_table = len(encryption_table)
     length_parts = len(parts)
