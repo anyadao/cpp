@@ -7,15 +7,12 @@
 import random
 def shuffle_list(list_to_shuffle):
     list_of_values = []
-    start = 0
     for index in range(len(list_to_shuffle) - 1):
         random_index = random.randint(index, len(list_to_shuffle)-1)
         while list_to_shuffle[random_index] in list_of_values:
-            random_index = random.randint(start, len(list_to_shuffle) - 1)
-        saved_value =  list_to_shuffle[index]
-        list_to_shuffle[index] = list_to_shuffle[random_index]
-        list_to_shuffle[random_index] = saved_value
-        list_of_values.insert(index, list_to_shuffle[random_index])
+            random_index = random.randint(0, len(list_to_shuffle) - 1)
+        list_to_shuffle[index], list_to_shuffle[random_index] = list_to_shuffle[random_index], list_to_shuffle[index]
+        list_of_values.append(list_to_shuffle[random_index])
     return (list_to_shuffle)
 
 odd_list = []
