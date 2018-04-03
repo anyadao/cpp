@@ -6,13 +6,16 @@
 # являются изограммами, а само слово 'изограмма' - нет.
 
 #__________________________________________TASK_NUMBER_4____________________________________________
-def odd_sum(number):
-    sum_odd = [int(digit) for digit in number if int(digit) % 2 != 0]
-    return sum(sum_odd)
+def odd_multiply(number):
+    multiply_odd = 1
+    odd_list = [int(digit) for digit in number if int(digit) % 2 != 0]
+    for digit in odd_list:
+        multiply_odd *= digit
+    return multiply_odd
 
 number = input('Введите пятизначное число: ')
 if len(number) == 5:
-    print('Сумма нечетных цифр в вашем числе: ', odd_sum(number))
+    print('Произведение нечетных цифр в вашем числе: ', odd_multiply(number))
 else:
     print('Вы ввели неверные данные')
 
@@ -40,15 +43,18 @@ def input_text():
     text = input('Введите текст или слово для определения изограмма это или нет: ')
     return text
 
+
 def izogram(input_text):
-    for word in input_text.split(' '):
-        start = 0
-        for char in word:
-            start += 1
-            if char in word[start:]:
-                print('Ваше слово или текст не является изограммой')
-                return False
-        else:
+    space = ' '
+    start = 0
+    for char in input_text:
+        start += 1
+        if space in char:
+            continue
+        if char in input_text[start:]:
+            print('Ваше слово или текст не является изограммой')
+            return False
+    else:
             print('Ваше слово или текст является изограммой.')
             return True
 
