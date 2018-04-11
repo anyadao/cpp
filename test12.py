@@ -11,16 +11,15 @@ def pupils_test():
     start = 2
     end = 9
     pupils_task = []
-    quantity = 15
-    iteration = 0
-    for i in range(quantity + iteration):
+    quantity = 0
+    while quantity < 15:
         num1 = random.randint(start, end)
         num2 = random.randint(start, end)
         if '%d * %d' %(num1, num2) and '%d * %d' %(num2, num1) in pupils_task:
-            iteration += 1
             continue
         expression = '%d * %d' %(num1, num2)
         pupils_task.append(expression)
+        quantity += 1
     pp(pupils_task)
     return pupils_task
 
